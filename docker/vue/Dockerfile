@@ -1,6 +1,6 @@
 FROM node:12.4
 
-WORKDIR /var/www/board/
+WORKDIR /var/www/chat-board/front
 
 RUN npm install -g @vue/cli @vue/cli-init
 

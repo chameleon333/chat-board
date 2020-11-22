@@ -13,7 +13,7 @@ services:
       dockerfile: ./docker/go/Dockerfile
     tty: true # コンテナの起動永続化
     volumes:
-      - .:/var/www/chat-board/backend # マウントディレクトリ指定
+      - .:/var/www/chat-board/back # マウントディレクトリ指定
     ports:
       - "8888:8888" # Chat Server
       - "5050:5050" # delve用
@@ -28,9 +28,9 @@ services:
       dockerfile: ./docker/vue/Dockerfile
     tty: true
     volumes:
-      - .:/var/www/chat-board/front
+      - ./front:/var/www/chat-board/front
       - node_modules_volume:/workspaces/node_modules
-    port:
+    ports:
       - "8080:8080"
     networks:
       - chat-board
